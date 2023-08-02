@@ -1,10 +1,31 @@
+import { useState } from "react"
 import Image from "next/image"
 import styles from '../../styles/guitarras.module.css'
 import Layout from "@/components/layout"
-import Link from "next/link"
 
-export default function Producto({guitarra}) {
-    const {nombre, imagen, precio, url, descripcion} = guitarra[0].attributes
+
+export default function Producto({guitarra, agregarCarrito}) {
+    const [cantidad, setCantidad] = useState(0)
+    const {nombre, imagen, precio, descripcion} = guitarra[0].attributes
+     
+    const handleSubmit = e=>{
+        e.preventDefault()
+        if (cantidad <1){
+            alert('Cantidad no válida')
+            return
+        }
+        //construir objeto para localStorage
+        const guitarraSeleccionada ={
+            id:guitarra[0].id,
+            imagen: imagen.data.attributes.url,
+            nombre,
+            precio,
+            cantidad
+        }
+        //pasando info al context
+        agregarCarrito(guitarraSeleccionada)
+
+    }
     return (
     <Layout
         title={`guitarra ${nombre}`}
@@ -19,9 +40,21 @@ export default function Producto({guitarra}) {
               <h3> {nombre}</h3>
               <p className={styles.descripcion}>{descripcion}</p>
               <p className={styles.precio}> ${precio}</p>
-              <Link legacyBehavior href={`/guitarras/${url}`}>
-              <a className={styles.enlace}>Ver producto</a>
-              </Link>
+             <form  onSubmit={handleSubmit}
+                    className={styles.formulario}> 
+                <label htmlFor="Cantidad">Cantidad</label>
+                <select 
+                    onChange={e=>setCantidad(+e.target.value)} 
+                    id="cantidad">
+                    <option value="0">Seleccione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <input type="submit" value="Agregar a carrito"/> 
+             </form>
           </div>
        
       </div>

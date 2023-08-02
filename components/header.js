@@ -29,7 +29,7 @@ export default function Header() {
             </Link>
            
             <Link legacyBehavior href='/carrito'>
-                <a className={router.pathname == '/carrito' ? styles.active: ''}>Carrito</a>
+                <a className={router.pathname == '/carrito' ? styles.active: ''}><Image width={30} height={25} src="/img/carrito.png" alt="Carrito de compras"/></a>
             </Link>
         </nav>
     </div>
