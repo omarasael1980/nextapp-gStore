@@ -1,38 +1,80 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+  
+# NextJS- Guitar-Store      
+      
+### visit the demo page
+    https://nextjs-guitar-store.vercel.app/carrito
 
-First, run the development server:
+ # GuitarLA, it's a webpage that belong to  a React course.
 
-```bash
+It has been built in NextJs, it consums a Strapi API [(see the project in my repository](https://github.com/omarasael1980/guitarrStore)), it has an index,  posts, guitar store and a  store cart.
+
+The index has general information, while in Store "Tienda" you can select any item and will open with the full information so you can select how many guitars you want to buy, when you click the button it will be save in the local storage and in the store cart
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/2597d534-dda8-4c22-b5a5-04ae2707fd99)
+
+
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/01f0137d-5efe-465b-8c9d-b663e5c811cb)
+
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/4dd013d7-baec-4c68-89bf-a8202bb6eccf)
+
+![image](https://github.com/omarasael1980/GuitarStoreRemix/assets/51717542/00341276-f79b-468e-9c62-9c79764b7c50)
+
+# Welcome to NextJS!
+
+- [NextJS Docs](https://nextjs.org/docs)
+
+## Development
+
+From your terminal:
+
+```sh
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This starts your app in development mode, rebuilding assets on file changes.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Deployment
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+First, build your app for production:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Then run the app in production mode:
 
-## Learn More
+```sh
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+Now you'll need to pick a host to deploy it to.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### DIY
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
 
-## Deploy on Vercel
+Make sure to deploy the output of `remix build`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `build/`
+- `public/build/`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Using a Template
+
+When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over your `app/` folder to the new project that's pre-configured for your target server.
+
+```sh
+cd ..
+# create a new project, and pick a pre-configured host
+npx create-remix@latest
+cd my-new-remix-app
+# remove the new project's app (not the old one!)
+rm -rf app
+# copy your app over
+cp -R ../my-old-remix-app/app app
+```
+ 
+## Como parte del curso de React de Udemy
+      Aprende React: Hooks, State, MERN, Next.js, Remix Run, Redux, Tailwind CSS, Prisma y mucho más - CREANDO +15 APPS REALES
+      https://www.udemy.com/share/101WZS3@AI-xBWaySbqrPGhvE0jhGwQ8_fjGFJi_TKA7O7E89Y29OIGWaLSnocMSf7gGoOfr/
+      Juan Pablo De la torre Valdez
+      https://codigoconjuan.com/
